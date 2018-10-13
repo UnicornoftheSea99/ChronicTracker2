@@ -3,6 +3,7 @@ package com.example.emilyrhyu.chronictracker;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -40,6 +41,12 @@ public class Main extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        // ADD HOME FRAGMENT YOU FIRST OPEN THE APP
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragments_placeholder, new Home());
+        ft.commit();
     }
 
     @Override
@@ -80,22 +87,28 @@ public class Main extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        // Begin the transaction
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            // Replace the contents of the container with the new fragment
+            ft.replace(R.id.fragments_placeholder, new Home());
+
         } else if (id == R.id.nav_history) {
+            // Replace the contents of the container with the new fragment
+            ft.replace(R.id.fragments_placeholder, new History());
 
         } else if (id == R.id.nav_settings) {
+            // Replace the contents of the container with the new fragment
+            ft.replace(R.id.fragments_placeholder, new Settings());
 
-        }/* else if (id == R.id.nav_settings) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }*/
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-            return true;
         }
+
+        // Complete the changes added above
+        ft.commit();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
+}
