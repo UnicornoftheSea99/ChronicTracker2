@@ -14,8 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public ArrayList<Sleep> SleepData = new ArrayList<Sleep>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,5 +114,9 @@ public class Main extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setSleepEntry (Sleep sleep) {
+        SleepData.add(sleep);
     }
 }
