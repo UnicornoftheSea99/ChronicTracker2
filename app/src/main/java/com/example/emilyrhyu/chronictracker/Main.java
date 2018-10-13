@@ -16,7 +16,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-public class Medication extends AppCompatActivity
+public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public ArrayList<Sleep> SleepData = new ArrayList<Sleep>();
@@ -24,7 +24,7 @@ public class Medication extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medication);
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

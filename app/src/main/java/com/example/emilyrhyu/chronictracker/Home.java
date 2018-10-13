@@ -39,7 +39,7 @@ public class Home extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
                         // BUILDS A NEW SLEEP - ADD IT TO THE SLEEP DATA LIST
                         Sleep test = new Sleep(true);
-                        ((Medication) getActivity()).setSleepEntry(test);
+                        ((Main) getActivity()).setSleepEntry(test);
                         dialog.dismiss();
                     }
                 });
