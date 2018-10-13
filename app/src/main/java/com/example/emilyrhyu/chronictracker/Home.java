@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +12,7 @@ import android.widget.Button;
 
 
 public class Home extends Fragment {
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,9 @@ public class Home extends Fragment {
                 dialog.setMessage("Player Name Already Exists. Please Find a New Name.");
                 dialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        // BUILDS A NEW SLEEP - ADD IT TO THE SLEEP DATA LIST
+                        Sleep test = new Sleep(true);
+                        ((Medication) getActivity()).setSleepEntry(test);
                         dialog.dismiss();
                     }
                 });
