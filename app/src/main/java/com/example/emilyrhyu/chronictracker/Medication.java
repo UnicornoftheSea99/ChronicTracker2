@@ -41,6 +41,12 @@ public class Medication extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        // ADD HOME FRAGMENT YOU FIRST OPEN THE APP
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragments_placeholder, new Home());
+        ft.commit();
     }
 
     @Override
@@ -84,19 +90,17 @@ public class Medication extends AppCompatActivity
         // Begin the transaction
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
-        if (id == R.id.nav_camera) {
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_home) {
             // Replace the contents of the container with the new fragment
             ft.replace(R.id.fragments_placeholder, new Home());
-        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_history) {
             // Replace the contents of the container with the new fragment
             ft.replace(R.id.fragments_placeholder, new History());
-        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_settings) {
             // Replace the contents of the container with the new fragment
             ft.replace(R.id.fragments_placeholder, new Settings());
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
