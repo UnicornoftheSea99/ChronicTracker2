@@ -63,7 +63,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <Button
         android:id="@+id/button4"
@@ -88,14 +88,25 @@
         android:id="@+id/textView"
         android:layout_width="387dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="How Are You Feeling Today?"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.236" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_vertical|center_horizontal"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="93dp"
+        tools:text="@tools:sample/date/mmddyy" />
 
 
 </android.support.constraint.ConstraintLayout>
